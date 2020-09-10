@@ -4,8 +4,8 @@
    padding: 0;
  }
 body{
-     background-color: red;
-     background-image: url(bilden);
+     background-color:lightpink;
+     /*background-image: url(bilden);*/
      background-repeat: no-repeat;
      background-size: cover;
  }
@@ -19,3 +19,18 @@ p{
     margin:auto;
     color: white;
 }
+
+form{
+    width: 300px;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    
+}
+form > input{
+    height: 20px;
+    width: 200px;
+    margin: auto;
+    border-radius: 3px;
+}
+
