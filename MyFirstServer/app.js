@@ -4,6 +4,29 @@ const port = 3000;
 
 const clientDir = __dirname + "\\client\\"
 
+
+//MongoDb initials
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/bruh', {useNewUrlParser: true});
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+});
+// Lets gooo
+
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String
+});
+
+const User = mongoose.model('User', userSchema) 
+
+
+
+
+
 app.use(express.json());
 app.use(express.urlencoded());
 
@@ -26,8 +49,12 @@ app.get('/Waifu', (req, res) => {
 app.post('/', (req, res) => {
   console.log(req.body.fname);
   console.log(req.body.email);
+  const user1 = new User({name: req.body.fname,email:req.body.email});
+  user1.save();
   res.redirect('/');
 })
+
+
 
 
 

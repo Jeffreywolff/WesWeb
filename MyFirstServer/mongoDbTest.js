@@ -8,15 +8,31 @@ db.once('open', function() {
   // we're connected!
 });
 
-const kittySchema = new mongoose.Schema({
-    name: String
+const personSchema = new mongoose.Schema({
+    name: String,
+    age: Number
   });
 
-  
+personSchema.methods.speak = () =>{
+    const presentation = this.name 
+    ? "My name is" `${this.name}.` 
+    : `We are watching you!`;
 
-  
+    console.log(presentation);
+}  
 
+  const Person = mongoose.model('Person', personSchema);
 
+  const niklas = new Person({name:'Niklas',age:'33'});
+  const jeffrey = new Person({name:'Jeffrey', age:'18'})
+  niklas.speak();
+
+  jeffrey.save();
+
+  if (!Person.find({name: niklas.name})){
+    niklas.save();
+  }
+  /*
 // NOTE: methods must be added to the schema before compiling it with mongoose.model()
 kittySchema.methods.speak = function () {
     const greeting = this.name
@@ -24,6 +40,7 @@ kittySchema.methods.speak = function () {
       : "I don't have a name";
     console.log(greeting);
   }
+  
   
 const Kitten = mongoose.model('Kitten', kittySchema);
 
@@ -43,4 +60,4 @@ Kitten.find(function (err, kittens) {
   if (err) return console.error(err);
   console.log(kittens);
 });
-
+*/
