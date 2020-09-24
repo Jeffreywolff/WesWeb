@@ -4,10 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "devStart": "nodemon app.js"
+    "devStart": "nodemon app.js",
+    "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jeffrey",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
