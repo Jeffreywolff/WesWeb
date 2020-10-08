@@ -3,8 +3,11 @@ const app = express();
 const port = 3000;
 const dBModule = require('./dBModule');
 const personModel = require('./PersonModel');
+const clientDir = __dirname + "\\client\\";
 
-const clientDir = __dirname + "\\client\\"
+// exports.dBAddress = 'mongodb://localhost/webshop';
+
+
 
 
 app.use(express.json());
@@ -33,8 +36,6 @@ app.post('/', (req, res) => {
   dBModule.store(user);
   res.redirect('/');
 })
-
-
 
 
 
