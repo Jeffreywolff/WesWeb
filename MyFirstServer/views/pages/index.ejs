@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebbserverJeff</title>
-    <link rel="stylesheet" href="cssenn">
+    <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
     <div class="header">
         <h1>Space Exploration</h1>
+        <h1>Hej <%- name %> </h1>
+        <h1>Tack för registreringen av <%- email %> !</h1>
     </div>
     
     <p>Wanna sign up to meet your DREAM WAIFU, just enter your credentials and we will send you the waifu of your dreams! We will also send 
@@ -18,7 +20,7 @@
         PLEASE dont shut this site down, just making dreams true!
     </p>
 
-    <img src="Waifu" width="200px" style="margin: auto;">
+    <img src="Waifu.jpg" width="200px" style="margin: auto;">
 
           <form action="/" method="POST">
             <label for="fname">First name:</label><br>
@@ -26,7 +28,7 @@
             <label for="Email">Email:</label><br>
             <input type="text" id="email" name="email"> <br>
             <input type="submit" value="Submit">
-          </form> 
+          </form>
 
 </body>
 </html>
