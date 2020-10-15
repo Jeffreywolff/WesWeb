@@ -17,3 +17,8 @@ exports.newUser = (name,email) =>{
 
     return user;
 }
+
+exports.userFind = async () =>{
+  let foundUser = await User.find({});
+  return foundUser;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/postmessages" method="POST">
+    <input type="email" name="email" placeholder="example@email.com">
+    <input type="fname" name="fname" placeholder="Ex. Anders">
+    <input type="submit" value="Submit">
+    
+    </form>
+
+    <% for( let i = 0; i < message.length; i++ ) { %>
+        <h1>Namn: <%- message[i].fname %> </h1>
+        <h1>Email: <%- message[i].email %> </h1>
+        <h1>_______________</h1>
+    <% } %>
+
+</body>
+</html>
