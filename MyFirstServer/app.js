@@ -35,14 +35,9 @@ app.post('/postmessages', async (req, res) => {
 
 
 app.post('/', (req, res) => {
-
-  console.log(req.body.fname);
-  console.log(req.body.email);
   let user = personModel.newUser(req.body.fname, req.body.email);
-  res.render('pages/index.ejs', {name: req.body.fname, email: req.body.email});
   dBModule.store(user);
-  res.redirect('/');
-
+  res.render('pages/index.ejs', {name: req.body.fname, email: req.body.email});
 })
 
 
